@@ -18,7 +18,7 @@ export interface CommentModelRenderProps {
 const defaultCommentModelForRenderProps: CommentModelRenderProps = {
   author: 'Commentor' as string,
   avatar:
-    'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/976.jpg' as string,
+    'https://api.dicebear.com/9.x/notionists/svg?seed=Commentor' as string,
   mail: 'commtor@example.com' as string,
   text: '世界！' as string,
   ip: '0.0.0.0' as string | undefined,

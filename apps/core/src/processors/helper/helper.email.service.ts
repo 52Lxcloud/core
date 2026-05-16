@@ -80,14 +80,14 @@ export class EmailService implements OnModuleInit, OnModuleDestroy {
   }
 
   readTemplate(type: string): Promise<string> {
-    return this.assetService.getAsset(`/email-template/${type}.template.ejs`, {
+    return this.assetService.getAsset(`email-template/${type}.template.ejs`, {
       encoding: 'utf-8',
     }) as Promise<string>
   }
 
   writeTemplate(type: string, source: string) {
     return this.assetService.writeUserCustomAsset(
-      `/email-template/${type}.template.ejs`,
+      `email-template/${type}.template.ejs`,
       source,
       {
         encoding: 'utf-8',
@@ -97,7 +97,7 @@ export class EmailService implements OnModuleInit, OnModuleDestroy {
 
   async deleteTemplate(type: string) {
     await this.assetService
-      .removeUserCustomAsset(`/email-template/${type}.template.ejs`)
+      .removeUserCustomAsset(`email-template/${type}.template.ejs`)
       .catch((error) => {
         if ((error?.message as string).includes('no such file or directory'))
           return
